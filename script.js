@@ -97,7 +97,7 @@ class ball {
         localStorage.setItem("ballPositionTop", this.positionY); 
         localStorage.setItem("ballPositionLeft", this.positionX);
     }
-    moveOflocalStorageSecondScreen(){
+    moveOfLocalStorageSecondScreen(){
         const top = Number(localStorage.getItem("ballPositionTop"));
         const left = Number(localStorage.getItem("ballPositionLeft")) - Number(localStorage.getItem("innerWidth-1"));
         this.element.style.setProperty("top", top + "px");
@@ -112,7 +112,8 @@ class ball {
         &&(ballPositionTop >= playerPosition -15 && ballPositionTop<= playerPosition + 115)){
             this.speedX = -this.speedX;
         }
-        //its minus 70 beacuse balls width is 40px and the hitbot is on the top left corner
+
+        //its minus 70 because balls width is 40px and the hitBox is on the top left corner
         if(((this.widthScreen - 75) <= ballPositionLeft)
         &&(ballPositionTop >= botPosition - 15 && ballPositionTop <= botPosition + 115)){
             this.speedX = -this.speedX;
@@ -151,7 +152,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const updateBot = ()=>{
             requestAnimationFrame(updateBot);
             botOnSecondPage.move();
-            ballToPlay.moveOflocalStorageSecondScreen();
+            ballToPlay.moveOfLocalStorageSecondScreen();
         }
         updateBot();
     }else{
@@ -169,14 +170,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
         document.querySelector('.ask-players').style.display = 'none';
     
         //ask for the difficulty
-        const $selectDificult = document.querySelector('.select-dificult');
-        const $btns = $selectDificult.querySelectorAll('button');
+        const $selectDifficulty = document.querySelector('.select-difficulty');
+        const $btn = $selectDifficulty.querySelectorAll('button');
     
-        //show the dificult selector
-        $selectDificult.style.display = 'flex';
-        $btns.forEach(($btn) => {
+        //show the difficult selector
+        $selectDifficulty.style.display = 'flex';
+        $btn.forEach(($btn) => {
             $btn.addEventListener('click', () => {
-                $selectDificult.style.display = 'none';
+                $selectDifficulty.style.display = 'none';
                 isPlaying = true;
                 document.querySelector('.ask-players').style.display = 'none';
                 window.open(location.href.split("?")[0] + "?2", "_blank");

@@ -13,7 +13,7 @@ body{
     color: #3f7;
     overflow: hidden;
 }
-.ask-players, .select-dificult{
+.ask-players, .select-difficulty{
     position: absolute;
     top: 0;
     left: 0;
@@ -25,15 +25,15 @@ body{
     flex-wrap: wrap;
     gap: 15px;
 }
-.select-dificult{
+.select-difficulty{
     display: none;
 }
-.ask-players h2, .select-dificult h2{
+.ask-players h2, .select-difficulty h2{
     width: 100%;
     text-align: center;
     font-size: 3rem;
 }
-.ask-players button, .select-dificult button{
+.ask-players button, .select-difficulty button{
     background: #222;
     color: #3f7;
     padding: 10px 20px;
